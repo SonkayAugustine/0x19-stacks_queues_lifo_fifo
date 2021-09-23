@@ -1,52 +1,66 @@
 #include "monty.h"
-/**
- * push_node_end - add new node at the end of a
- * stack_t list
- * @head: pointer to pointer of first node of stack list
- * @n: an integer value to be pushed to stack node
- *
- * Return: address of new element or NULL
- */
-stack_t *push_node_end(stack_t **head, int n)
-{
-	stack_t *new_node;
-	stack_t *temp = *head;
 
-	if (!head)
-		return (NULL);
-	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
-		return (NULL);
-	new_node->n = n;
-	new_node->next = NULL;
-	if (!*head)
-	{
-		new_node->prev = NULL;
-		*head = new_node;
-		return (new_node);
-	}
-	while (temp->next)
-	temp = temp->next;
-	temp->next = new_node;
-	new_node->prev = temp;
-	return (new_node);
-}
 /**
  * push_node - add new node at the end of a
- * stack_t list
- * @n: an integer value to be pushed to stack node
+ * stack_t list.
+ * @head: pointer to pointer of first node of stack list.
+ * @n: an integer value to be pushed to stack node.
  *
  * Return: address of new element or NULL
  */
-bool push_node(int value)
+void _push(stack_t **stack, unsigned int line_number)
 {
-        if (atoi(value))
-        {
-                push_node_end(*head, value);
-		return (true);
-	}
-	else
-	{
-		
-}
+	stack_t *tmp, *new;
+	int i;
 
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		set_op_tok_error(malloc_error());
+		return;
+	}
+
+	if (op_toks[1] == NULL)
+	{
+		set_op_tok_error(no_int_error(line_number));
+		return;
+	}
+
+	for (i = 0; op_toks[1][i]; i++)
+	{
+		if (op_toks[1][i] == '-' && i == 0)
+			continue;
+		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
+		{
+			set_op_tok_error(no_int_error(line_number));
+			return;
+		}
+	}
+	new->n = atoi(op_toks[1]);
+
+	if (check_mode(*stack) == 0)
+	{
+		tmp = (*stack)->next;
+		new->prev = *stack;
+		new->next = tmp;
+		if (tmp)
+			tmp->prev = new;
+		(*stack)->next = new;
+	}
+}
+/**
+ * monty_pall - Prints the values of a stack_t linked list.
+ * @stack: A pointer to the top mode node of a stack_t linked list.
+ * @line_number: The current working line number of a Monty bytecodes file.
+ */
+void _pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = (*stack)->next;
+
+	while (tmp)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+	}
+	(void)line_number;
+}
