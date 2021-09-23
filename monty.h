@@ -41,7 +41,7 @@ typedef struct instruction_s
 /* Opcode prototypes*/
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-
+void _pint(stack_t **stack, unsigned int line_number);
 /*Interpretor helper functions*/
 void free_tokens(void);
 unsigned int token_arr_len(void);
@@ -65,7 +65,7 @@ int malloc_error(void);
 int usage_error(void);
 int unknown_op_error(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
-
+int pint_error(unsigned int line_number);
 /* Test prototypes*/
 
 #endif

@@ -74,8 +74,8 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 	instruction_t op_funcs[] = {
 		{"push", _push},
 		{"pall", _pall},
-		/*{"pint", monty_pint},
-		{"pop", monty_pop},
+		{"pint", _pint},
+		/*{"pop", monty_pop},
 		{"swap", monty_swap},
 		{"add", monty_add},
 		{"nop", monty_nop},
