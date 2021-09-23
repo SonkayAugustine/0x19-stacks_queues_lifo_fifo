@@ -126,7 +126,7 @@ First step is to clone the repository into your directory
 
 ```
 
-$ git clone https://github.com/kjowong/monty.git
+$git clone git@github.com:SonkayAugustine/monty.git
 
 ```
 
