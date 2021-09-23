@@ -76,19 +76,19 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
-		/*{"swap", monty_swap},
-		{"add", monty_add},
-		{"nop", monty_nop},
-		{"sub", monty_sub},
-		{"div", monty_div},
-		{"mul", monty_mul},
-		{"mod", monty_mod},
-		{"pchar", monty_pchar},
-		{"pstr", monty_pstr},
-		{"rotl", monty_rotl},
-		{"rotr", monty_rotr},
-		{"stack", monty_stack},
-		{"queue", monty_queue},*/
+		{"swap", _swap},
+		/*{"add", _add},
+		{"nop", _nop},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
+		{"pchar", _pchar},
+		{"pstr", _pstr},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
+		{"stack", _stack},
+		{"queue", _queue},*/
 		{NULL, NULL}
 	};
 	int i;
