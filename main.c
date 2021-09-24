@@ -2,6 +2,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+char **op_toks = NULL;
 
 /**
  * main - the entry point for Monty Interp
@@ -15,8 +16,6 @@ int main(int argc, char **argv)
 {
 	FILE *monty_fd = NULL;
 	int exit_code = EXIT_SUCCESS;
-	char **op_toks = NULL;
-
 	if (argc != 2)
 		return (usage_error());
 	monty_fd = fopen(argv[1], "r");
