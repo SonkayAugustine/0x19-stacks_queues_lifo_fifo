@@ -118,8 +118,6 @@ char **strtow(char *str, char *delims)
 	if (str == NULL || !*str)
 		return (NULL);
 	wc = get_word_count(str, delims);
-
-
 	if (wc == 0)
 		return (NULL);
 	words = malloc((wc + 1) * sizeof(char *));
@@ -149,10 +147,10 @@ char **strtow(char *str, char *delims)
 			words[i][n] = *(str + n);
 			n++;
 		}
-		words[i][n] = '\0'; /* set end of str */
+		words[i][n] = '\0';/* set end of str */
 		str = get_next_word(str, delims);
 		i++;
 	}
-	words[i] = NULL; /* last element is null for iteration */
+	words[i] = NULL;/* last element is null for iteration */
 	return (words);
 }

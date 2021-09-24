@@ -54,9 +54,11 @@ int init_stack(stack_t **stack)
  */
 int check_mode(stack_t *stack)
 {
-	if (stack->n == 0)
-		return (0);
-	/*else if (stack->n == QUEUE)
-		return (QUEUE);*/
-	return (2);
-}													
+if (stack->n == 0)
+return (0);
+	/*
+	 * else if (stack ->n == QUEUE)
+	 * return (QUEUE);
+	 */
+return (2);
+}

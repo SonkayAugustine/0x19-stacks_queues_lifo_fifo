@@ -77,18 +77,20 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
-		/*{"add", _add},
-		{"nop", _nop},
-		{"sub", _sub},
-		{"div", _div},
-		{"mul", _mul},
-		{"mod", _mod},
-		{"pchar", _pchar},
-		{"pstr", _pstr},
-		{"rotl", _rotl},
-		{"rotr", _rotr},
-		{"stack", _stack},
-		{"queue", _queue},*/
+	      /*
+	       *{"add", _add},
+	       *{"nop", _nop},
+	       *{"sub", _sub},
+	       *{"div", _div},
+	       *{"mul", _mul},
+	       *{"mod", _mod},
+	       *{"pchar", _pchar},
+	       *{"pstr", _pstr},
+	       *{"rotl", _rotl},
+	       *{"rotr", _rotr},
+	       *{"stack", _stack},
+	       *{"queue", _queue},
+	       */
 		{NULL, NULL}
 	};
 	int i;
@@ -104,7 +106,7 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 
 /**
  * run_monty - Primary function to execute a Monty bytecodes script.
- * @script_fd: File descriptor for an open Monty bytecodes script.
+ * @monty_fd: File descriptor for an open Monty bytecodes script.
  *
  * Return: EXIT_SUCCESS on success, respective error code on failure.
  */

@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- * push - add new node at the end of a
+ * _push - add new node at the end of a
  * stack_t list.
- * @head: pointer to pointer of first node of stack list.
- * @n: an integer value to be pushed to stack node.
+ * @stack: pointer to pointer of first node of stack list.
+ * @line_number: an integer value to be pushed to stack node.
  *
  * Return: address of new element or NULL
  */
